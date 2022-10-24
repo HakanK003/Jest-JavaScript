@@ -469,3 +469,131 @@ switch(day){
         };
         return obj;
       }
+
+
+//Task 13 - Error prevention
+
+    function addTwoNums(a,b) {
+        console.log(a + b)
+    }
+    addTwoNums(5, "5") // "55"
+
+    function addTwoNums(a,b) {
+        try {
+            console.log(a + b)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+    function addTwoNums(a,b) {
+        try {
+            if(typeof(a) != 'number') {
+                throw new ReferenceError('the first argument is not a number')
+            } else if (typeof(b) != 'number') {
+                throw new ReferenceError('the second argument is not a number')
+            } else {
+                console.log(a + b)
+            }
+        } catch(err) {
+            console.log("Error!", err)
+        }
+    }
+    addTwoNums(5, "5")
+    console.log("It still works")
+
+
+//Task 14 - Defensive programming
+
+    //Defensive programming is all about assuming that all the arguments a function will receive are of the wrong type,  the wrong value or both.
+
+    function letterFinder(word, match) {
+       
+        var condition1 = typeof(word) == 'string' && word.length >= 2;
+        var condition2 = typeof(match) == 'string' && match.length == 1;
+      
+        if(condition1 && condition2) {
+            for(var i = 0; i < word.length; i++) {
+                if(word[i] == match) {
+                    console.log('Found the', match, 'at', i)
+                } else {
+                    console.log('---No match found at', i)
+                }
+            }
+        } else {
+            console.log("Please pass correct arguments to the function")
+        }
+
+    }
+
+    letterFinder([],[])
+    letterFinder("cat","c")
+
+
+//Task 15 - Looping Through Object
+
+    var clothingItem = {
+        price: 50,
+        color: 'beige',
+        material: 'cotton',
+        season: 'autumn'
+    }
+
+    for( key of Object.keys(clothingItem) ) {
+        console.log(keys, ":", clothingItem[key])
+    }
+
+
+//Task 16 - Web page content update
+
+    let answer = prompt('What is your name?');
+    if (typeof(answer) === 'string') {
+        var h1 = document.createElement('h1')
+        h1.innerText = answer;
+        document.body.innerText = '';
+        document.body.appendChild(h1);
+    }
+
+    var h1 = document.createElement('h1')
+    h1.innerText = "Type into the input to make this text change"
+
+    var input = document.createElement('input')
+    input.setAttribute('type', 'text')
+
+    document.body.innerText = '';
+    document.body.appendChild(h1);
+    document.body.appendChild(input);
+
+    input.addEventListener('change', function() {
+        h1.innerText = input.value
+    })
+
+
+//Task 17 - Capture Data
+
+    var h1 = document.querySelector('h1')
+
+    var arr = [
+        'Example Domain',
+        'First Click',
+        'Second Click',
+        'Third Click'
+    ]
+
+    function handleClicks() {
+        switch(h1.innerText) {
+            case arr[0]:
+                h1.innerText = arr[1]
+                break
+            case arr[1]:
+                h1.innerText = arr[2]
+                break
+            case arr[2]:
+                h1.innerText = arr[3]
+                break
+            default:
+                h1.innerText = arr[0]
+        }
+    }
+        
+    h1.addEventListener('click', handleClicks);
