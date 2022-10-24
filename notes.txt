@@ -1,0 +1,21 @@
+JavaScript Object Notation - JSON
+
+If you have JSON object
+You can use JSON.parse(jsonObject) and create a object and use JavaScript
+
+
+Mocking allows you to isolate the code being tested in your unit tests
+ 
+#to check version of node / npm / jest
+node --version
+npm --version 
+jest --version
+
+#to install jest
+npm init -y
+npm install --save-dev jest
+
+#to run the tests
+npm run test
+
+#Don't forget to update package.json 
