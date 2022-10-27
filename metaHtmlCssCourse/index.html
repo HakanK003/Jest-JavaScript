@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Little Lemon</title>
+
+  <meta property="og:title" content="Our Menu">
+  <meta property="og:type"  content="website">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:url"   content="https://littlelemon/">
+  <meta property="og:description" content="Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Little Lemon">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png">
+  </header>
+  <main>
+
+    <form>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" required minlength="2">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" required minlength="2">
+        </div>
+        <button type="submit">Log In</button>
+    </form>
+
+    <form>
+        <div>
+            <label for="email_address">Email Address</label>
+            <input type="email" id="email_address" name="email_address">
+        </div>
+        <div>
+            <label for="booking_date">Date of Booking</label>
+            <input type="date" id="booking_date" name="booking_date">   
+        </div>
+        <div>
+            <label for="people">Number of people</label>
+            <input type="number" id="people" min="1" max="8" name="people">        
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="agree" name="agree" required> 
+                I agree to the cancellation policy
+            </label>
+        </div>
+        <button type="submit">Book Now</button>
+    </form>
+
+
+    <video controls width="320" height="240">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+      
+      <form>
+        <div>
+          <label for="rating">Rating</label>
+          <input type="range" min="1" max="5" id="rating" name="rating" list="ratings">
+          <datalist id="ratings">
+            <option value="1" label="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+        </div>
+        <button type="submit">Submit Rating</button>
+      </form>
+
+  </main>
+</body>
+
+</html>
